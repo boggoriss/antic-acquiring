@@ -6,6 +6,8 @@ import { EnotDataDto } from '@lib/acquiring/enot/enot-data.dto';
 export class EnotController {
     constructor(private readonly enotService: EnotService) {}
 
+    /** Webhook для оплаты
+     * */
     @Post('/pay')
     async pay(@Body() data: EnotDataDto) {
         return await this.enotService.pay(data);

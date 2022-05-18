@@ -11,9 +11,13 @@ export default class User extends BaseEntity {
     }
 
     // region Plain
+    /** Имя пользователя
+     * */
     @Column('varchar', { nullable: false, length: 255 })
     username: string;
 
+    /** Email
+     * */
     @Column('varchar', { nullable: false, length: 255 })
     email: string;
     // endregion

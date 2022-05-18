@@ -17,18 +17,28 @@ export default class Invoice extends BaseEntity {
     }
 
     // region Plain
+    /** Платженая система
+     * */
     @Column('varchar', { nullable: false })
     paymentSystem: PaymentSystemType;
 
+    /** Оплачен ли
+     * */
     @Column('boolean', { nullable: false, default: false })
     paid: boolean;
 
+    /** Сумма
+     * */
     @Column('bigint', { nullable: false })
     amount: number;
 
+    /** Id промокода
+     * */
     @Column('uuid', { nullable: true })
     promoCodeId: string;
 
+    /** Id транзакции
+     * */
     @Column('uuid', { nullable: true })
     transactionId: string;
     // endregion
